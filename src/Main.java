@@ -1,26 +1,18 @@
+import pro.learnup.homework.GameLogic;
+
+import static pro.learnup.homework.GameLogic.speedValue;
+
 public class Main {
     public static void main(String[] args) {
-        boolean isGreenLight = false;
 
-        int speedOfPlayer1 = 1;
-        int speedOfPlayer2 = 0;
-        int speedOfPlayer3 = 0;
+        String result = speedValue(0);
+        System.out.println("Игрок 1 " + result);
 
-        int outsiders = 0;
-        if (isGreenLight) {
-            System.out.println("Количество выбывающих игроков: " + outsiders);
-        } else {
+        result = speedValue(2);
+        System.out.println("Игрок 2 " + result);
 
-            if (speedOfPlayer1 > 0) {
-                outsiders = outsiders + 1;
-            }
-            if (speedOfPlayer2 > 0) {
-                outsiders = outsiders + 1;
-            }
-            if (speedOfPlayer3 > 0) {
-                outsiders = outsiders + 1;
-            }
-            System.out.println("Количество выбывающих игроков: " + outsiders);
-        }
+        result = speedValue(78);
+        System.out.println("Игрок 3 " + result);
     }
 }
+
