@@ -1,26 +1,20 @@
+import java.util.Arrays;
+
+import static pro.learnup.homework.GameLogic.*;
+
 public class Main {
     public static void main(String[] args) {
-        boolean isGreenLight = false;
 
-        int speedOfPlayer1 = 1;
-        int speedOfPlayer2 = 0;
-        int speedOfPlayer3 = 0;
+        int[] speedOfPlayers = {1, 0, 1, 0, 2};
 
-        int outsiders = 0;
-        if (isGreenLight) {
-            System.out.println("Количество выбывающих игроков: " + outsiders);
-        } else {
+        int result1 = numbersOfDropOuts(speedOfPlayers);   // <- сколько игроков выбывает? numbersOfDropouts
+        System.out.println("Выбывает игроков : " + result1);
 
-            if (speedOfPlayer1 > 0) {
-                outsiders = outsiders + 1;
-            }
-            if (speedOfPlayer2 > 0) {
-                outsiders = outsiders + 1;
-            }
-            if (speedOfPlayer3 > 0) {
-                outsiders = outsiders + 1;
-            }
-            System.out.println("Количество выбывающих игроков: " + outsiders);
-        }
+        int[] result2 = speedOfTheDroppedPlayers(speedOfPlayers);         // <- массив из скоростей выбывающих speedOfTheDroppedPlayers
+        System.out.println("Массив скоростей выбывших игроков : " + Arrays.toString(result2));
+
+        int[] result3 = speedOfTheNonDroppedPlayers(speedOfPlayers);        // <- массив из скоростей не выбывающих speedOfTheNonDroppedPlayers
+        System.out.println("Массив скоростей участников, продолжающих играть : " + Arrays.toString(result3));
+
     }
 }
